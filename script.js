@@ -1,4 +1,6 @@
 // import { SKYWAY_KEY, scriptURL } from './key.js';
+const SKYWAY_KEY = process.env.SKYWAY_KEY;
+const scriptURL = process.env.scriptURL;
 const Peer = window.Peer;
 
 (async function main() {
