@@ -1,4 +1,4 @@
-import { SKYWAY_KEY, scriptURL } from './key.js';
+// import { SKYWAY_KEY, scriptURL } from './key.js';
 const Peer = window.Peer;
 
 (async function main() {
