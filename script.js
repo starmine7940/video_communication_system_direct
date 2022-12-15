@@ -1,3 +1,4 @@
+import { SKYWAY_KEY, scriptURL } from './key.js';
 const Peer = window.Peer;
 
 (async function main() {
@@ -25,7 +26,7 @@ const Peer = window.Peer;
     
 
     const peer = new Peer({
-        key: window.SKYWAY_KEY,
+        key: SKYWAY_KEY,
         debug: 0,                               //max:3
     });
 
@@ -189,7 +190,7 @@ const Peer = window.Peer;
             'Content-Type' : 'application/x-www-form-urlencoded',
             'body': JSON.stringify(postData)
         }
-        fetch(window.scriptURL, param)
+        fetch(scriptURL, param)
             .then((response) => {
                 console.log(response);
             })
