@@ -1,6 +1,3 @@
-// import { SKYWAY_KEY, scriptURL } from './key.js';
-const SKYWAY_KEY = process.env.SKYWAY_KEY;
-const scriptURL = process.env.scriptURL;
 const Peer = window.Peer;
 
 (async function main() {
@@ -73,8 +70,6 @@ const Peer = window.Peer;
             }else if(data.event == 'emotion'){
                 const personalEmotion = personalVideoContainer.querySelector('.emotion');
                 change_emotion(data.data, personalEmotion);
-                flush(personalVideoContainer);
-                // mosaic(personalVideoContainer.querySelector('.video'), data.data);
             }
             
         });
@@ -172,7 +167,7 @@ const Peer = window.Peer;
                 room.send({'event': 'emotion', 'data': myEmotionBar.value});    //Joinボタンを押さないと送れない
                 post_to_sheet(roomId.value, myName.value, myEmotionBar.value);
             }catch(error){
-                console.log(error);
+                // console.log(error);
             }
             changed_flag = false;
         }
@@ -192,7 +187,7 @@ const Peer = window.Peer;
             'Content-Type' : 'application/x-www-form-urlencoded',
             'body': JSON.stringify(postData)
         }
-        fetch(scriptURL, param)
+        fetch(SCRIPT_URL, param)
             .then((response) => {
                 console.log(response);
             })
