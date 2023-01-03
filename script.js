@@ -110,6 +110,7 @@ function getDeviceList(deviceInfos){
             myEmotion.textContent = change_emotion(myEmotionBar.value, displayedmyEmotion);
             room.send({'event': 'name', 'data': myName.value});
             room.send({'event': 'emotion', 'data': myEmotionBar.value});
+            post_to_sheet(roomId.value, myName.value, myEmotionBar.value);
         });
 
         // 相手が入室してきた時
